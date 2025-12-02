@@ -1,0 +1,28 @@
+.errorMessage {
+  display: block;
+  outline: none;
+  padding: 1px 12px 8px;
+  background-color: var(--vscode-sideBar-background);
+  opacity: 1;
+  position: relative;
+}
+
+.messageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: color-mix(in srgb, var(--vscode-charts-red) 10%, transparent);
+  border-left: 3px solid var(--vscode-charts-red);
+  color: var(--vscode-charts-red);
+  font-size: 0.9em;
+}
+
+.icon {
+  color: var(--vscode-charts-red);
+  flex-shrink: 0;
+}
+
+.errorText {
+  font-weight: 500;
+}

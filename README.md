@@ -1,7 +1,16 @@
-# Claudex
+# VsCode Claude Code GUI 插件
 
-Claudex - Claude Code for VSCode.
+技术栈：
+- React
+- Vite
+- Tailwind CSS
 
-## rename to [Claudix](https://github.com/Haleclipse/Claudix)
+---
 
-Due to a complete refactoring and duplicate naming, this repo has been archived.
+## License
+
+License
+
+## AI声明：本项目使用：spec-kit 进行AI辅助开发
+
+https://github.com/github/spec-kit

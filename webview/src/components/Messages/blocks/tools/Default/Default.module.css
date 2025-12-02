@@ -1,0 +1,37 @@
+.toolLabel {
+  font-weight: 500;
+  color: var(--vscode-foreground);
+  font-size: 0.9em;
+}
+
+.section {
+  margin-bottom: 12px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionHeader {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--vscode-foreground) 80%, transparent);
+  margin-bottom: 6px;
+}
+
+.jsonContent {
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 80%, transparent);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0;
+  font-family: var(--vscode-editor-font-family);
+  color: var(--vscode-editor-foreground);
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 0.85em;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

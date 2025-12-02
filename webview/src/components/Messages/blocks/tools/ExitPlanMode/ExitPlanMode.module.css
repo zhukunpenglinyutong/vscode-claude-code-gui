@@ -1,0 +1,152 @@
+.planCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--vscode-editor-background);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.planHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px;
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 95%, transparent);
+  border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+.planHeader :global(.codicon) {
+  font-size: 16px;
+}
+
+.planTitle {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--vscode-foreground);
+}
+
+.planBody {
+  padding: 16px;
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.planBody.isExpanded {
+  max-height: none;
+}
+
+.planBody:not(.isExpanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--vscode-editor-background));
+  pointer-events: none;
+}
+
+.planContent {
+  font-family: var(--vscode-editor-font-family);
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: var(--vscode-editor-foreground);
+}
+
+/* Markdown styles */
+.planContent h1 {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 16px;
+  color: var(--vscode-foreground);
+}
+
+.planContent h1:first-child {
+  margin-top: 0;
+}
+
+.planContent h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 16px;
+  color: var(--vscode-foreground);
+}
+
+.planContent h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  color: var(--vscode-foreground);
+}
+
+.planContent p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.planContent ul,
+.planContent ol {
+  margin-bottom: 8px;
+  padding-left: 24px;
+}
+
+.planContent li {
+  margin-bottom: 4px;
+}
+
+.planContent code {
+  background-color: color-mix(in srgb, var(--vscode-textCodeBlock-background) 50%, transparent);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: var(--vscode-editor-font-family);
+}
+
+.planContent pre {
+  background-color: var(--vscode-textCodeBlock-background);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 8px;
+  overflow-x: auto;
+  margin-bottom: 8px;
+}
+
+.planContent pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Expand Button */
+.planFooter {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  border-top: 1px solid var(--vscode-panel-border);
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 95%, transparent);
+}
+
+.expandButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: transparent;
+  border: none;
+  color: var(--vscode-textLink-foreground);
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: color 0.15s ease;
+}
+
+.expandButton:hover {
+  color: var(--vscode-textLink-activeForeground);
+}
+
+.expandButton :global(.codicon) {
+  font-size: 12px;
+}

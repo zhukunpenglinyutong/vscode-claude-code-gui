@@ -1,0 +1,37 @@
+.systemMessage {
+  display: block;
+  outline: none;
+  padding: 1px 2px 8px 12px;
+  background-color: var(--vscode-sideBar-background);
+  opacity: 1;
+  position: relative;
+}
+
+.messageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  font-size: 0.9em;
+}
+
+.icon {
+  color: var(--vscode-charts-yellow);
+  flex-shrink: 0;
+}
+
+.messageType {
+  background-color: color-mix(in srgb, var(--vscode-charts-yellow) 20%, transparent);
+  color: var(--vscode-charts-yellow);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7em;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.systemContent {
+  color: color-mix(in srgb, var(--vscode-foreground) 80%, transparent);
+  font-style: italic;
+  flex: 1;
+}

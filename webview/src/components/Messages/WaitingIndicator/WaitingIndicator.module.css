@@ -1,0 +1,27 @@
+.waitingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: var(--vscode-foreground);
+  opacity: 0.8;
+}
+
+.icon {
+  flex-shrink: 0;
+  font-weight: 400;
+  line-height: 1;
+  color: #ce7e5d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  text-align: center;
+}
+
+.text {
+  font-family: var(--vscode-font-family);
+  font-size: 0.95em;
+  white-space: pre;
+  font-weight: 600;
+}

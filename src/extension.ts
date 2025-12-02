@@ -52,7 +52,7 @@ function hasWorkspaceFolder(): boolean {
 
 function updateWorkspaceContext(): void {
   const hasFolder = hasWorkspaceFolder();
-  vscode.commands.executeCommand('setContext', 'claudex.hasWorkspaceFolder', hasFolder);
+  vscode.commands.executeCommand('setContext', 'claude-code-gui.hasWorkspaceFolder', hasFolder);
   logger.info(`工作区状态更新: ${hasFolder ? '有' : '无'}工作区文件夹`);
 }
 
@@ -67,13 +67,13 @@ async function initializeServices(context: vscode.ExtensionContext): Promise<voi
     return;
   }
 
-  logger.info('开始初始化 Claudex 服务...');
+  logger.info('开始初始化 Claude Code GUI 服务...');
   isInitialized = true;
 
   try {
     // 创建日志服务
     const logService = new LogServiceImpl([
-      new ConsoleLog('[Claudex] ', LogLevel.Debug)
+      new ConsoleLog('[Claude Code GUI] ', LogLevel.Debug)
     ]);
 
   // 创建文件系统服务
@@ -127,41 +127,41 @@ async function initializeServices(context: vscode.ExtensionContext): Promise<voi
     context.extensionUri,
     claudeClient
   );
-  context.subscriptions.push(vscode.window.registerWebviewViewProvider('claudex', viewProvider));
+  context.subscriptions.push(vscode.window.registerWebviewViewProvider('claude-code-gui', viewProvider));
 
   // Command opens auxiliary bar and focuses our chat view
-  const openChat = vscode.commands.registerCommand('claudex.openChat', async () => {
-    await vscode.commands.executeCommand('workbench.view.extension.claudex');
+  const openChat = vscode.commands.registerCommand('claude-code-gui.openChat', async () => {
+    await vscode.commands.executeCommand('workbench.view.extension.claude-code-gui');
   });
   context.subscriptions.push(openChat);
 
   // TODO: 重新实现这些命令
   /*
   // Settings button command (appears in view title via menus.view/title)
-  const openSettings = vscode.commands.registerCommand('claudex.openSettings', async () => {
+  const openSettings = vscode.commands.registerCommand('claude-code-gui.openSettings', async () => {
     await showSettingsMenu(configManager);
   });
   context.subscriptions.push(openSettings);
 
   // API Key 管理命令
-  const setApiKey = vscode.commands.registerCommand('claudex.setApiKey', async () => {
+  const setApiKey = vscode.commands.registerCommand('claude-code-gui.setApiKey', async () => {
     await promptForApiKey(configManager);
   });
   context.subscriptions.push(setApiKey);
 
-  const clearApiKeyCmd = vscode.commands.registerCommand('claudex.clearApiKey', async () => {
+  const clearApiKeyCmd = vscode.commands.registerCommand('claude-code-gui.clearApiKey', async () => {
     await clearApiKeyFromStorage(configManager);
   });
   context.subscriptions.push(clearApiKeyCmd);
 
   // 权限模式切换命令
-  const changePermissionMode = vscode.commands.registerCommand('claudex.changePermissionMode', async () => {
+  const changePermissionMode = vscode.commands.registerCommand('claude-code-gui.changePermissionMode', async () => {
     await promptForPermissionMode(configManager);
   });
   context.subscriptions.push(changePermissionMode);
 
   // 历史会话恢复
-  const resumeFromHistory = vscode.commands.registerCommand('claudex.resumeFromHistory', async () => {
+  const resumeFromHistory = vscode.commands.registerCommand('claude-code-gui.resumeFromHistory', async () => {
     const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
     if (!workspaceFolder) {
       vscode.window.showWarningMessage('请先打开一个工作区文件夹');
@@ -189,7 +189,7 @@ async function initializeServices(context: vscode.ExtensionContext): Promise<voi
         return;
       }
 
-      await context.workspaceState.update('claudex.pendingResumeSessionId', pick.sessionId);
+      await context.workspaceState.update('claude-code-gui.pendingResumeSessionId', pick.sessionId);
       logger.info('已设置待恢复会话:', pick.sessionId);
       vscode.window.showInformationMessage(`已设置恢复会话：${pick.label}，下次对话将自动衔接。`);
     } catch (error) {
@@ -200,11 +200,11 @@ async function initializeServices(context: vscode.ExtensionContext): Promise<voi
   context.subscriptions.push(resumeFromHistory);
   */
 
-    logger.info('Claudex 服务初始化完成');
+    logger.info('Claude Code GUI 服务初始化完成');
   } catch (error) {
-    logger.error('Claudex 服务初始化失败:', error);
+    logger.error('Claude Code GUI 服务初始化失败:', error);
     isInitialized = false; // 重置状态，允许重试
-    vscode.window.showErrorMessage(`Claudex 初始化失败: ${error instanceof Error ? error.message : String(error)}`);
+    vscode.window.showErrorMessage(`Claude Code GUI 初始化失败: ${error instanceof Error ? error.message : String(error)}`);
   }
 }
 

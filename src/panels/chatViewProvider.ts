@@ -54,7 +54,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         <meta charset="UTF-8" />
         <meta http-equiv="Content-Security-Policy" content="${csp}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Claudex Chat</title>
+        <title>Claude Code GUI Chat</title>
         <link href="${cssUri}" rel="stylesheet" />
       </head>
       <body>

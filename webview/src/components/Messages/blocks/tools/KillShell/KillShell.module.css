@@ -1,0 +1,55 @@
+.toolLabel {
+  font-weight: 500;
+  color: var(--vscode-foreground);
+  font-size: 0.9em;
+}
+
+.shellId {
+  color: color-mix(in srgb, var(--vscode-foreground) 70%, transparent);
+  font-size: 0.85em;
+  font-family: var(--vscode-editor-font-family);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.statusBadge.success {
+  background-color: color-mix(in srgb, var(--vscode-charts-green) 20%, transparent);
+  color: var(--vscode-charts-green);
+}
+
+.statusBadge :global(.codicon) {
+  font-size: 10px;
+}
+
+.successMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: color-mix(in srgb, var(--vscode-charts-green) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vscode-charts-green) 30%, transparent);
+  border-radius: 4px;
+  color: var(--vscode-foreground);
+  font-size: 0.85em;
+}
+
+.successMessage :global(.codicon) {
+  font-size: 14px;
+  color: var(--vscode-charts-green);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.messageText {
+  flex: 1;
+  line-height: 1.4;
+  font-family: var(--vscode-editor-font-family);
+}

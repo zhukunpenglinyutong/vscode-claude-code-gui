@@ -1,0 +1,208 @@
+.todoListSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.todoHeader {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  cursor: pointer;
+}
+
+.todoHeaderContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-grow: 1;
+  padding-left: 4px;
+}
+
+.chevronIcon {
+  color: var(--vscode-foreground);
+  opacity: 0.6;
+  font-size: 12px;
+  transition: transform 0.1s;
+}
+
+.todoCount {
+  font-size: 12px;
+  color: var(--vscode-input-placeholderForeground);
+  opacity: 0.8;
+}
+
+.todoListContainer {
+  height: 190px;
+  overflow: hidden;
+  padding-bottom: 3px;
+}
+
+.todoScrollArea {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.todoList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+}
+
+.todoItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.todoItemIconContainer {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.todoInProgressCircle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--vscode-progressBar-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vscode-button-foreground);
+}
+
+.todoInProgressCircle .codicon {
+  font-size: 10px;
+}
+
+.todoItemIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--vscode-foreground);
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoItemIndicator.hasIcon {
+  background: var(--vscode-gitDecoration-addedResourceForeground);
+  border-color: var(--vscode-gitDecoration-addedResourceForeground);
+  opacity: 1;
+  color: white;
+}
+
+.todoItemContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.todoItemText {
+  font-size: 12px;
+  color: var(--vscode-foreground);
+  line-height: 1.4;
+}
+
+.todoItemText.todoInProgress {
+  font-weight: 500;
+}
+
+/* Status-based styling */
+.todoItem.completed .todoItemText {
+  color: var(--vscode-descriptionForeground);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.todoItem.in_progress .todoItemText {
+  color: var(--vscode-foreground);
+}
+
+.todoItem.pending .todoItemText {
+  color: var(--vscode-foreground);
+  opacity: 0.8;
+}
+
+/* Custom scrollbar */
+.customScrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.customScrollbar:hover::-webkit-scrollbar-thumb {
+  background: var(--vscode-scrollbarSlider-background);
+}
+
+.customScrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--vscode-scrollbarSlider-hoverBackground);
+}
+
+.customScrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.customScrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Firefox scrollbar */
+.customScrollbar {
+  scrollbar-width: none;
+}
+
+.customScrollbar:hover {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vscode-scrollbarSlider-background) transparent;
+}
+
+/* Animations */
+.fadeInFast {
+  animation: fadein 0.15s ease-out;
+}
+
+.fadeInTodo {
+  animation: fadeInTodo 0.2s ease-out;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInTodo {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

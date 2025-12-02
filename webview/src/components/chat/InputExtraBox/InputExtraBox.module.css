@@ -1,0 +1,14 @@
+.inputExtraBox {
+  padding: 0px 8px;
+}
+
+.toolbarSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  height: 1px;
+  background: color-mix(in srgb, var(--vscode-input-border, var(--vscode-widget-border)) 40%, transparent);
+  margin: 2px -5px;
+}

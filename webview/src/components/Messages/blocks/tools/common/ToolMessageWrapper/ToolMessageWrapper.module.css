@@ -1,0 +1,92 @@
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 8px;
+}
+
+.mainLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  user-select: none;
+}
+
+.mainLine.isExpandable {
+  cursor: pointer;
+}
+
+.mainLine.isExpandable:hover {
+  background-color: color-mix(in srgb, var(--vscode-list-hoverBackground) 30%, transparent);
+}
+
+.toolIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 2px;
+  color: var(--vscode-foreground);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.toolIconBtn .codicon {
+  font-size: 16px;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.statusIndicatorTrailing {
+  margin-left: auto;
+}
+
+.expandableContent {
+  padding: 4px 0 0px 16px;
+  margin-left: 10px;
+  border-left: 1px solid var(--vscode-panel-border);
+}
+
+/* Permission Actions */
+.permissionActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 0 4px;
+  margin-left: 26px;
+}
+
+.btnReject,
+.btnAccept {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border: 1px solid var(--vscode-button-border);
+}
+
+.btnReject {
+  background: var(--vscode-button-secondaryBackground);
+  color: var(--vscode-button-secondaryForeground);
+}
+
+.btnReject:hover {
+  background: var(--vscode-button-secondaryHoverBackground);
+}
+
+.btnAccept {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+}
+
+.btnAccept:hover {
+  background: var(--vscode-button-hoverBackground);
+}

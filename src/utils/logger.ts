@@ -11,7 +11,7 @@ class Logger {
   };
 
   private constructor() {
-    this.channel = vscode.window.createOutputChannel('Claudex', 'claudex-log');
+    this.channel = vscode.window.createOutputChannel('Claude Code GUI', 'claude-code-gui-log');
   }
 
   static get instance(): Logger {

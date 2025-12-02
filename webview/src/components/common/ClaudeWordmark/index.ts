@@ -1,0 +1,1 @@
+export { ClaudeWordmark } from './ClaudeWordmark';

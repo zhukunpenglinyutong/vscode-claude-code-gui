@@ -1,0 +1,319 @@
+.dropdownPopover {
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  align-items: stretch;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  visibility: visible;
+  transform-origin: left top;
+  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--vscode-widget-shadow) 30%, transparent);
+  min-width: 140px;
+  max-width: 240px;
+  width: auto;
+}
+
+.dropdownContainer {
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: var(--vscode-dropdown-background);
+  border: 1px solid var(--vscode-commandCenter-inactiveBorder, var(--vscode-widget-border));
+  align-items: stretch;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0;
+  contain: paint;
+  outline: none;
+  pointer-events: auto;
+}
+
+.searchInputContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0 6px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  margin: 2px;
+}
+
+.searchInput {
+  font-size: 12px;
+  line-height: 15px;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--vscode-input-foreground);
+  padding: 3px 0;
+  flex: 1;
+  min-width: 0;
+  border: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+  opacity: 0.5;
+}
+
+.menuContent {
+  padding: 0.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.menuSections {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 2px;
+}
+
+.dropdownFooter {
+  flex-shrink: 0;
+  background-color: var(--vscode-dropdown-background);
+  border-top: 1px solid var(--vscode-commandCenter-inactiveBorder, var(--vscode-widget-border));
+}
+
+/* Fade in animation */
+.fadeInFast {
+  animation: fadein 0.1s linear;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dropdown Trigger styles */
+.dropdownTriggerContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownTriggerPopover {
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 6px;
+  background-color: var(--vscode-dropdown-background);
+  border: 1px solid var(--vscode-commandCenter-inactiveBorder, var(--vscode-widget-border));
+  align-items: stretch;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--vscode-widget-shadow) 30%, transparent);
+  contain: paint;
+  outline: none;
+  min-width: 140px;
+  max-width: 240px;
+  width: auto;
+}
+
+.dropdownTriggerContainerInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdownTriggerBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2547;
+  background: transparent;
+}
+
+.searchInputSection {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0 6px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  margin: 2px;
+}
+
+.contextSearchInput {
+  font-size: 12px;
+  line-height: 15px;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--vscode-input-foreground);
+  padding: 3px 0;
+  flex: 1;
+  min-width: 0;
+  border: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+.contextSearchInput::placeholder {
+  opacity: 0.5;
+}
+
+/* Dropdown Item styles */
+.dropdownMenuItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.125rem 0.375rem;
+  min-width: 0;
+  cursor: pointer;
+  color: var(--vscode-foreground);
+}
+
+.dropdownMenuItem:hover {
+  background-color: color-mix(in srgb, var(--vscode-foreground) 20%, transparent);
+  color: var(--vscode-list-hoverForeground);
+  outline: 1px dotted var(--vscode-contrastActiveBorder);
+}
+
+.dropdownMenuItem:hover .fileInfoContainer,
+.dropdownMenuItem:hover .optionInfoContainer,
+.dropdownMenuItem:hover .filePathContainer {
+  color: var(--vscode-panelTitle-activeForeground);
+}
+
+.rounded {
+  border-radius: 3px;
+}
+
+.menuItemMainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+}
+
+.menuItemLeftSection {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 0;
+  height: 16px;
+}
+
+.menuItemIconSpan {
+  flex-shrink: 0;
+  width: 16px;
+  min-width: 16px;
+  color: var(--vscode-foreground);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px !important;
+}
+
+.dropdownMenuItem:hover .menuItemIconSpan {
+  color: var(--vscode-list-activeSelectionForeground);
+}
+
+.menuItemTextSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  min-width: 0;
+  gap: 0.25rem;
+  height: 17px;
+}
+
+.fileInfoContainer,
+.optionInfoContainer {
+  max-width: 100%;
+  color: var(--vscode-panelTitle-activeForeground);
+  flex-shrink: 0;
+}
+
+.monacoHighlightedLabel {
+  color: inherit;
+  font-size: 12px;
+  line-height: 17px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.filePathContainer {
+  direction: rtl;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--vscode-panelTitle-activeForeground);
+  flex-shrink: 1;
+  opacity: 0.6;
+}
+
+.filePathText {
+  font-size: 9px;
+  line-height: 17px;
+  unicode-bidi: embed;
+}
+
+.menuItemRightSection {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-left: 0.25rem;
+}
+
+.submenuArrowIcon {
+  color: var(--vscode-foreground);
+  margin-right: 0 !important;
+  font-size: 8px !important;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.dropdownMenuItem:hover .submenuArrowIcon {
+  color: var(--vscode-list-activeSelectionForeground);
+  opacity: 1;
+}
+
+.checkIcon {
+  color: var(--vscode-foreground);
+  margin-right: 0 !important;
+  font-size: 8px !important;
+  flex-shrink: 0;
+}
+
+.dropdownMenuItem:hover .checkIcon {
+  color: var(--vscode-list-activeSelectionForeground);
+}
+
+.highlight {
+  color: var(--vscode-list-highlightForeground);
+  font-weight: 700;
+}
+
+/* Dropdown Separator styles */
+.dropdownSeparator {
+  height: 1px;
+  width: calc(100% + 0.25rem);
+  background: var(--vscode-commandCenter-inactiveBorder, var(--vscode-widget-border));
+  opacity: 0.8;
+  margin: 2px -0.125rem;
+  position: relative;
+}
