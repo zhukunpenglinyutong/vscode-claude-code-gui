@@ -1,0 +1,86 @@
+.toolLabel {
+  font-weight: 500;
+  color: var(--vscode-foreground);
+  font-size: 0.9em;
+}
+
+.patternText {
+  font-family: var(--vscode-editor-font-family);
+  color: var(--vscode-charts-purple);
+  background-color: color-mix(in srgb, var(--vscode-charts-purple) 15%, transparent);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.optionsSection,
+.flagsSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.85em;
+}
+
+.resultsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 0;
+  font-size: 0.85em;
+}
+
+.detailLabel {
+  color: color-mix(in srgb, var(--vscode-foreground) 70%, transparent);
+  font-weight: 500;
+}
+
+.optionsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--vscode-foreground);
+}
+
+.optionItem :global(.codicon) {
+  font-size: 12px;
+  color: color-mix(in srgb, var(--vscode-foreground) 70%, transparent);
+}
+
+.optionText {
+  font-family: var(--vscode-editor-font-family);
+}
+
+.flagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.flagTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: color-mix(in srgb, var(--vscode-charts-blue) 15%, transparent);
+  color: var(--vscode-charts-blue);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.flagTag :global(.codicon) {
+  font-size: 12px;
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

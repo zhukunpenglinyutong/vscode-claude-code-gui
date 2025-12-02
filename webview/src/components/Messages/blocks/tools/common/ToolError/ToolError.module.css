@@ -1,0 +1,17 @@
+.errorContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--vscode-errorForeground);
+}
+
+.errorIcon {
+  color: var(--vscode-charts-red);
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: inherit;
+}
+
+.errorText {
+  word-break: break-word;
+}

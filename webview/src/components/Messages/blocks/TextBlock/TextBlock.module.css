@@ -1,0 +1,19 @@
+.textBlock {
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+.textContent {
+  user-select: text;
+}
+
+.streamingCursor {
+  color: var(--vscode-textPreformat-foreground);
+  animation: blink 1s infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

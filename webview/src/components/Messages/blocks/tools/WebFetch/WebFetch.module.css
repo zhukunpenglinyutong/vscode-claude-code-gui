@@ -1,0 +1,99 @@
+.toolLabel {
+  font-weight: 500;
+  color: var(--vscode-foreground);
+  font-size: 0.9em;
+}
+
+.urlLink {
+  font-family: var(--vscode-editor-font-family);
+  color: var(--vscode-textLink-foreground);
+  text-decoration: none;
+  font-size: 0.85em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.urlLink:hover {
+  border-bottom-color: var(--vscode-textLink-foreground);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 600;
+  font-family: var(--vscode-editor-font-family);
+}
+
+.statusSuccess {
+  background-color: color-mix(in srgb, var(--vscode-charts-green) 20%, transparent);
+  color: var(--vscode-charts-green);
+}
+
+.statusRedirect {
+  background-color: color-mix(in srgb, var(--vscode-charts-blue) 20%, transparent);
+  color: var(--vscode-charts-blue);
+}
+
+.statusClientError {
+  background-color: color-mix(in srgb, var(--vscode-charts-orange) 20%, transparent);
+  color: var(--vscode-charts-orange);
+}
+
+.statusServerError {
+  background-color: color-mix(in srgb, var(--vscode-charts-red) 20%, transparent);
+  color: var(--vscode-charts-red);
+}
+
+.durationBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  background-color: color-mix(in srgb, var(--vscode-foreground) 10%, transparent);
+  color: color-mix(in srgb, var(--vscode-foreground) 80%, transparent);
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 600;
+  font-family: var(--vscode-editor-font-family);
+}
+
+.section {
+  margin-bottom: 12px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionLabel {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--vscode-foreground) 80%, transparent);
+  margin-bottom: 6px;
+}
+
+.sectionValue {
+  font-size: 0.85em;
+  color: var(--vscode-foreground);
+  font-family: var(--vscode-editor-font-family);
+  line-height: 1.5;
+}
+
+.resultContent {
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 80%, transparent);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0;
+  font-family: var(--vscode-editor-font-family);
+  color: var(--vscode-editor-foreground);
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 0.85em;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

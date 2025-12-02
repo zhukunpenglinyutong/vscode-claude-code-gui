@@ -1,0 +1,56 @@
+.toolLabel {
+  font-weight: 500;
+  color: var(--vscode-foreground);
+  font-size: 0.9em;
+}
+
+.queryText {
+  font-family: var(--vscode-editor-font-family);
+  color: var(--vscode-charts-blue);
+  background-color: color-mix(in srgb, var(--vscode-charts-blue) 15%, transparent);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85em;
+  padding: 6px 0;
+}
+
+.detailLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: color-mix(in srgb, var(--vscode-foreground) 70%, transparent);
+  font-weight: 500;
+}
+
+.domainList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.domainTag {
+  font-family: var(--vscode-editor-font-family);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.domainTag.allowed {
+  color: var(--vscode-charts-green);
+  background-color: color-mix(in srgb, var(--vscode-charts-green) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vscode-charts-green) 30%, transparent);
+}
+
+.domainTag.blocked {
+  color: var(--vscode-charts-red);
+  background-color: color-mix(in srgb, var(--vscode-charts-red) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vscode-charts-red) 30%, transparent);
+}

@@ -1,0 +1,76 @@
+.fileEditedSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileEditedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+  cursor: pointer;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-grow: 1;
+  padding-left: 4px;
+}
+
+.chevronIcon {
+  color: var(--vscode-foreground);
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.headerText {
+  font-size: 12px;
+  color: var(--vscode-input-placeholderForeground);
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+}
+
+.diffStats {
+  margin-left: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.additions {
+  color: var(--vscode-gitDecoration-addedResourceForeground);
+}
+
+.deletions {
+  color: var(--vscode-gitDecoration-deletedResourceForeground);
+}
+
+.fileList {
+  padding: 4px 0;
+}
+
+.fileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.fileItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.fileName {
+  color: var(--vscode-foreground);
+}
+
+.fileDiff {
+  display: flex;
+  gap: 6px;
+}

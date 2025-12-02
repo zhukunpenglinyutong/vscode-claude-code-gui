@@ -351,9 +351,11 @@ export class ClaudeCodeSessionService implements IClaudeCodeSessionService {
 	}
 
 	private _computeFolderSlug(folderUri: URI): string {
+		// 将所有非字母数字字符（包括中文、特殊符号等）替换为 '-'
+		// 这样可以确保生成的目录名只包含 ASCII 字母、数字和连字符
 		return folderUri.path
 			.replace(/^\/([a-z]):/i, (_, driveLetter) => driveLetter.toUpperCase() + '-')
-			.replace(/[\/\._]/g, '-');
+			.replace(/[^a-zA-Z0-9]/g, '-');
 	}
 
 	private _generateSessionLabel(summaryEntry: SummaryEntry | undefined, messages: SDKMessage[]): string {

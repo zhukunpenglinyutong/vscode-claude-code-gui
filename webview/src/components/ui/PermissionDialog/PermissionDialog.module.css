@@ -1,0 +1,127 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.dialog {
+  background: var(--vscode-editor-background);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: calc(100% - 32px);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--vscode-panel-border);
+  background: var(--vscode-sideBar-background);
+}
+
+.shieldIcon {
+  font-size: 20px;
+  color: var(--vscode-notificationsWarningIcon-foreground, #cca700);
+}
+
+.title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vscode-foreground);
+}
+
+.content {
+  padding: 16px;
+}
+
+.toolInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: var(--vscode-sideBar-background);
+  border-radius: 4px;
+}
+
+.toolLabel {
+  font-size: 12px;
+  color: var(--vscode-descriptionForeground);
+}
+
+.toolName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--vscode-foreground);
+  font-family: var(--vscode-editor-font-family);
+}
+
+.description {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: var(--vscode-descriptionForeground);
+  line-height: 1.5;
+}
+
+.prompt {
+  margin: 0;
+  font-size: 13px;
+  color: var(--vscode-foreground);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--vscode-panel-border);
+  background: var(--vscode-sideBar-background);
+  justify-content: flex-end;
+}
+
+.denyButton,
+.approveButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.denyButton {
+  background: var(--vscode-button-secondaryBackground);
+  color: var(--vscode-button-secondaryForeground);
+}
+
+.denyButton:hover {
+  background: var(--vscode-button-secondaryHoverBackground);
+}
+
+.approveButton {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+}
+
+.approveButton:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+
+.denyButton .codicon,
+.approveButton .codicon {
+  font-size: 12px;
+}

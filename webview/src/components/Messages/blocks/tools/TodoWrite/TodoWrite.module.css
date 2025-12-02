@@ -1,0 +1,190 @@
+.todowriteContainer {
+  background: color-mix(in srgb, var(--vscode-editor-background) 90%, transparent);
+  backdrop-filter: blur(9px) saturate(1.05);
+  margin: 4px 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Header */
+.todoListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--vscode-panel-border) 50%, transparent);
+}
+
+.todoListHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todoListHeaderLeftTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--vscode-foreground);
+}
+
+.todoListHeaderLeftTitleIcon {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.todoCount {
+  opacity: 0.6;
+  font-size: 0.95em;
+}
+
+.todoListHeaderRight {
+  display: flex;
+  align-items: center;
+}
+
+.expanderBtn {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--vscode-foreground);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.expanderBtn:hover {
+  background-color: color-mix(in srgb, var(--vscode-list-hoverBackground) 50%, transparent);
+}
+
+.expanderBtn :global(.codicon) {
+  font-size: 12px;
+}
+
+/* Content */
+.todoListContent {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.todoList {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+}
+
+.todoItem {
+  padding: 6px 12px;
+  transition: background-color 0.2s;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todoItem:hover {
+  background-color: color-mix(in srgb, var(--vscode-list-hoverBackground) 30%, transparent);
+}
+
+.todoLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todoItemIconContainer {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.todoItemIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--vscode-foreground);
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoItemIndicator.hasIcon {
+  background-color: var(--vscode-charts-green);
+  border-color: var(--vscode-charts-green);
+  opacity: 1;
+  color: white;
+}
+
+.todoInProgressCircle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--vscode-charts-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.todoInProgressCircle :global(.codicon) {
+  font-size: 12px;
+}
+
+/* Todo content */
+.todoContent {
+  flex: 1;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: var(--vscode-foreground);
+}
+
+.todoPending {
+  opacity: 0.8;
+}
+
+.todoInprogress {
+  color: var(--vscode-charts-blue);
+  font-weight: 500;
+}
+
+.todoCompleted {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Scrollbar styling */
+.todoListContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.todoListContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.todoListContent::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--vscode-scrollbarSlider-background) 60%, transparent);
+  border-radius: 5px;
+}
+
+.todoListContent::-webkit-scrollbar-thumb:hover {
+  background-color: var(--vscode-scrollbarSlider-hoverBackground);
+}

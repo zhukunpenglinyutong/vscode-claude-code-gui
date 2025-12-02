@@ -4,6 +4,42 @@
  *--------------------------------------------------------*/
 @import "tailwindcss";
 
+/* Tailwind CSS v4 Theme Configuration */
+@theme {
+  /* VSCode Colors - 使用 CSS 变量 */
+  --color-vscode-bg: var(--vscode-sideBar-background);
+  --color-vscode-fg: var(--vscode-foreground);
+  --color-vscode-input-bg: var(--vscode-input-background);
+  --color-vscode-input-fg: var(--vscode-input-foreground);
+  --color-vscode-input-border: var(--vscode-input-border);
+  --color-vscode-input-placeholder: var(--vscode-input-placeholderForeground);
+  --color-vscode-button-bg: var(--vscode-button-background);
+  --color-vscode-button-fg: var(--vscode-button-foreground);
+  --color-vscode-button-hover: var(--vscode-button-hoverBackground);
+  --color-vscode-panel-border: var(--vscode-panel-border);
+  --color-vscode-titlebar-fg: var(--vscode-titleBar-activeForeground);
+  --color-vscode-toolbar-hover: var(--vscode-toolbar-hoverBackground);
+  --color-vscode-focus-border: var(--vscode-focusBorder);
+  --color-vscode-scrollbar: var(--vscode-scrollbarSlider-background);
+  --color-vscode-scrollbar-hover: var(--vscode-scrollbarSlider-hoverBackground);
+  --color-vscode-scrollbar-active: var(--vscode-scrollbarSlider-activeBackground);
+  --color-vscode-dropdown-bg: var(--vscode-dropdown-background);
+  --color-vscode-dropdown-fg: var(--vscode-dropdown-foreground);
+  --color-vscode-editor-bg: var(--vscode-editor-background);
+  --color-vscode-editor-fg: var(--vscode-editor-foreground);
+  --color-vscode-charts-red: var(--vscode-charts-red);
+
+  /* 语义化颜色 */
+  --color-primary: #c8a2ff;
+  --color-primary-bg: rgba(147, 51, 234, 0.15);
+  --color-primary-border: rgba(147, 51, 234, 0.3);
+  --color-warning: #f59e0b;
+
+  /* 字体 */
+  --font-family-vscode: var(--vscode-font-family);
+  --font-size-vscode: var(--vscode-font-size);
+}
+
 /* CSS Variables */
 :root {
   color: inherit;

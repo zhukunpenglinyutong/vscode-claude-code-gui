@@ -1,13 +1,13 @@
 {
-  "name": "vscode-claudex",
-  "displayName": "Claudex",
-  "description": "Claude Code for VSCode.",
+  "name": "vscode-claude-code-gui",
+  "displayName": "Claude Code GUI",
+  "description": "VsCode版 Claude Code GUI 插件",
   "version": "0.0.1",
-  "publisher": "CometixSpace",
+  "publisher": "zhukunpenglinyutong",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Haleclipse/Claudex"
+    "url": "https://github.com/zhukunpenglinyutong/vscode-claude-code-gui"
   },
   "type": "module",
   "engines": {
@@ -23,45 +23,45 @@
   ],
   "contributes": {
     "configuration": {
-      "title": "Claudex",
+      "title": "Claude Code GUI",
       "properties": {
       }
     },
     "commands": [
       {
-        "command": "claudex.openChat",
-        "title": "Claudex: Open Chat"
+        "command": "claude-code-gui.openChat",
+        "title": "Claude Code GUI: Open Chat"
       },
       {
-        "command": "claudex.openSettings",
-        "title": "配置Claudex",
+        "command": "claude-code-gui.openSettings",
+        "title": "配置 Claude Code GUI",
         "icon": "$(gear)"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "claudex",
-          "title": "Claudex",
+          "id": "claude-code-gui",
+          "title": "Claude Code GUI",
           "icon": "dist/media/icons/claude.svg"
         }
       ]
     },
     "views": {
-      "claudex": [
+      "claude-code-gui": [
         {
-          "id": "claudex",
+          "id": "claude-code-gui",
           "type": "webview",
-          "name": "Claudex",
-          "when": "claudex.hasWorkspaceFolder"
+          "name": "Claude Code GUI",
+          "when": "claude-code-gui.hasWorkspaceFolder"
         }
       ]
     },
     "menus": {
       "view/title": [
         {
-          "command": "claudex.openSettings",
-          "when": "view == claudex",
+          "command": "claude-code-gui.openSettings",
+          "when": "view == claude-code-gui",
           "group": "navigation@99"
         }
       ]
@@ -81,7 +81,7 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "check-types": "tsc --noEmit",
-    "check-types:webview": "vue-tsc --noEmit",
+    "check-types:webview": "tsc --noEmit --project webview/tsconfig.json",
     "check-types:all": "npm run check-types && npm run check-types:webview",
     "lint": "eslint src",
     "test": "vscode-test",
@@ -91,10 +91,12 @@
     "@tailwindcss/vite": "^4.1.13",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@types/vscode": "^1.92.0",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-react": "^4.3.1",
     "@vscode/codicons": "^0.0.40",
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
@@ -105,21 +107,20 @@
     "tailwindcss": "^4.0.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.4",
-    "vite-plugin-svg-icons": "^2.0.1",
-    "vue": "^3.5.21",
-    "vue-tsc": "^3.0.8"
+    "vite-plugin-svg-icons": "^2.0.1"
   },
   "dependencies": {
     "@anthropic-ai/claude-code": "^1.0.123",
     "@anthropic-ai/sdk": "^0.63.1",
     "@mdi/font": "^7.4.47",
     "@modelcontextprotocol/sdk": "^1.18.1",
-    "@vueuse/core": "^13.9.0",
+    "framer-motion": "^11.3.0",
     "marked": "^16.3.0",
-    "motion-v": "^1.7.1",
     "path-browserify-esm": "^1.0.6",
-    "pinia": "^3.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rxjs": "^7.8.2",
-    "zod": "^4.1.11"
+    "zod": "^4.1.11",
+    "zustand": "^4.5.4"
   }
 }

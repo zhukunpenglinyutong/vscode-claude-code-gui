@@ -1,0 +1,8 @@
+.toolMessage {
+  display: block;
+  outline: none;
+  padding: 4px 16px 8px;
+  background-color: var(--vscode-sideBar-background);
+  opacity: 1;
+  position: relative;
+}

@@ -1,0 +1,85 @@
+.monacoScrollableElement {
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollableContentWrapper {
+  position: relative;
+  max-height: 240px;
+  height: auto;
+}
+
+.scrollableContentContainer {
+  transition: transform 0.1s ease-out;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.scrollbar {
+  position: absolute;
+  z-index: 10;
+}
+
+.scrollbar.vertical {
+  width: 6px;
+  right: 0;
+  top: 0;
+}
+
+.scrollbar.horizontal {
+  height: 10px;
+  bottom: 0;
+  left: 0;
+}
+
+.slider {
+  background: var(--vscode-scrollbarSlider-background, rgba(121, 121, 121, 0.4));
+  border-radius: 3px;
+  transition: background-color 0.1s ease;
+}
+
+.slider:hover {
+  background: var(--vscode-scrollbarSlider-hoverBackground, rgba(100, 100, 100, 0.7));
+}
+
+.slider:active {
+  background: var(--vscode-scrollbarSlider-activeBackground, rgba(191, 191, 191, 0.4));
+}
+
+.fade {
+  transition: opacity 0.2s ease-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  pointer-events: none;
+}
+
+.shadow.top {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--vscode-scrollbar-shadow, rgba(0, 0, 0, 0.35)),
+    transparent
+  );
+}
+
+.shadow:not(.top) {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    var(--vscode-scrollbar-shadow, rgba(0, 0, 0, 0.35)),
+    transparent
+  );
+}

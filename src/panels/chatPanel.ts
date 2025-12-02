@@ -17,8 +17,8 @@ export class ChatPanel {
 
   private constructor(private readonly extensionUri: vscode.Uri) {
     this.panel = vscode.window.createWebviewPanel(
-      'claudex',
-      'Claudex',
+      'claude-code-gui',
+      'Claude Code GUI',
       { viewColumn: vscode.ViewColumn.Two, preserveFocus: false },
       {
         enableScripts: true,
@@ -53,7 +53,7 @@ export class ChatPanel {
         <meta charset="UTF-8" />
         <meta http-equiv="Content-Security-Policy" content="${csp}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Claudex Chat</title>
+        <title>Claude Code GUI Chat</title>
         <link href="${cssUri}" rel="stylesheet" />
       </head>
       <body>

@@ -1,0 +1,131 @@
+.assistantMessage {
+  display: block;
+  outline: none;
+  padding: 0px 16px 0.4rem;
+  background-color: var(--vscode-sideBar-background);
+  opacity: 1;
+  position: relative;
+}
+
+.messageWrapper {
+  background-color: transparent;
+}
+
+.messageHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.roleLabel {
+  font-weight: 500;
+  color: var(--vscode-foreground);
+}
+
+.streamingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--vscode-charts-blue);
+  font-size: 0.8em;
+}
+
+.messageContent {
+  padding: 0px 2px;
+}
+
+/* Markdown styles */
+.messageContent h1,
+.messageContent h2,
+.messageContent h3,
+.messageContent h4,
+.messageContent h5,
+.messageContent h6 {
+  color: var(--vscode-foreground);
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+}
+
+.messageContent p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.messageContent ul,
+.messageContent ol {
+  margin: 0px 0px 0px 16px;
+  padding: 0px;
+}
+
+.messageContent li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  list-style-type: disc;
+}
+
+.messageContent pre {
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 50%, transparent);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 12px;
+  margin: 8px 0;
+  overflow-x: auto;
+}
+
+.messageContent code {
+  font-family: "Hack Nerd Font Mono", "SF Mono", Consolas, "Courier New", monospace;
+  word-break: break-all;
+  cursor: default;
+  color: inherit;
+}
+
+.messageContent pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.messageContent :not(pre) > code {
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 50%, transparent);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 0.9em;
+}
+
+.messageContent blockquote {
+  border-left: 4px solid var(--vscode-textBlockQuote-border);
+  background-color: var(--vscode-textBlockQuote-background);
+  margin: 8px 0;
+  padding: 8px 16px;
+}
+
+.messageContent a {
+  color: var(--vscode-textLink-foreground);
+  text-decoration: none;
+}
+
+.messageContent a:hover {
+  color: var(--vscode-textLink-activeForeground);
+  text-decoration: underline;
+}
+
+.messageContent table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.messageContent th,
+.messageContent td {
+  border: 1px solid var(--vscode-panel-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.messageContent th {
+  background-color: color-mix(in srgb, var(--vscode-editor-background) 30%, transparent);
+  font-weight: 600;
+}

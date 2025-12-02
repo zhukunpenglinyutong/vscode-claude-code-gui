@@ -22,7 +22,7 @@ import {
   isMessageStreaming
 } from '../utils/messageUtils';
 import { isSDKUserMessage, isSDKAssistantMessage } from '../../types/messages';
-import { setToolResult, setToolUse, setPermissionRequest, setPermissionResponse, getToolMessage, upsertToolMessage } from '../stores/toolMessageStore';
+import { setToolResult, setToolUse, setPermissionRequest, setPermissionResponse, getToolMessage, upsertToolMessage } from '../store/toolMessageStore';
 
 // ========== 全局状态 ==========
 
@@ -232,7 +232,9 @@ class WebviewMessageBus {
   private handleClaudeEvent(message: ClaudeEventMessage) {
     const event = message.payload;
     console.log('[MessageBus] Claude 事件:', event.kind, event);
-    console.log(event.message);
+    if ('message' in event) {
+      console.log(event.message);
+    }
 
     switch (event.kind) {
       case 'user':

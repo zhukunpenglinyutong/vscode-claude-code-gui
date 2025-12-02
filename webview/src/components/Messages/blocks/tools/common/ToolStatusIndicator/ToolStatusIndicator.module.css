@@ -1,0 +1,24 @@
+.toolStatusIndicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolStatusIndicator svg {
+  display: block;
+}
+
+/* 成功状态 - 绿色 */
+.statusSuccess {
+  color: var(--vscode-charts-green);
+}
+
+/* 失败状态 - 红色 */
+.statusError {
+  color: var(--vscode-charts-red);
+}
+
+/* 等待确认 - 橙色 */
+.statusPending {
+  color: var(--vscode-charts-orange);
+}

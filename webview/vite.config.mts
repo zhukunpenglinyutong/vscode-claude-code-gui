@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -9,7 +9,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 export default defineConfig(({ mode }) => ({
   root: __dirname,
   plugins: [
-    vue(),
+    react(),
     tailwindcss(),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(__dirname, '../assets/icons')],
